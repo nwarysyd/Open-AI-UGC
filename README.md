@@ -1,188 +1,251 @@
-# Open AI UGC
+# Open AI UGC — Free Open-Source Alternative to Arcads & MakeUGC
 
-> Open-source alternative to **[Arcads](https://www.arcads.ai)** and **[MakeUGC](https://www.makeugc.com)** for generating AI UGC video ads.
+> **The free, open-source alternative to Arcads and MakeUGC.** Generate AI UGC video ads with realistic AI actors using 4+ state-of-the-art video models — no per-seat pricing, no locked actor library, no vendor watermark.
 
-Open AI UGC is a self-hostable, production-ready studio for creating scroll-stopping AI UGC (user-generated content) video ads. Plug in a script, pick a model, and ship realistic AI-actor videos for TikTok, Reels, and Shorts — without paying per-seat SaaS pricing or being locked into a single vendor's actor library.
+**Community:** Join [Reddit](https://reddit.com/r/muapi) & [Discord](https://discord.gg/QhTrNRU4r3) for discussions and support
 
-Built with Next.js 16, React 19, Prisma, NextAuth, and Stripe. Video generation is powered by [MUAPI](https://muapi.ai), giving you instant access to the best image-to-video and text-to-video models on the market: **Veo 3.1**, **Seedance 2**, **Grok Video**, and **Happy Horse 1**.
+> 🤖 **Automate UGC ad generations with AI coding agents:** [Generative-Media-Skills](https://github.com/SamurAIGPT/Generative-Media-Skills) — a library of skills that let agents like **Claude Code**, **Codex**, and other coding assistants drive image/video models end-to-end (script → generate → review → re-render) directly from your terminal. Perfect for shipping 100 ad variants overnight without touching a UI.
 
----
+### Related projects
 
-## Why Open AI UGC?
+> **Open-source Node based workflow builder** -> https://github.com/SamurAIGPT/Vibe-Workflow
 
-| | Arcads / MakeUGC | **Open AI UGC** |
-|---|---|---|
-| Pricing | $110–$500+/mo per seat | Pay only for API generations |
-| Actor library | Locked to vendor's roster | Bring your own — upload any face/product image |
-| Model choice | Single in-house model | Veo 3.1, Seedance 2, Grok Video, Happy Horse 1 (swap per render) |
-| Hosting | SaaS only | Self-host on Vercel / your own infra |
-| Source code | Closed | MIT-friendly, fully customizable |
-| Branding | Vendor watermark / templates | 100% your brand, your domain |
+> **Open-source AI Clipping — turn any long-form YouTube video into viral-ready vertical shorts** -> https://github.com/SamurAIGPT/AI-Youtube-Shorts-Generator
 
-If you've ever wanted Arcads-style AI UGC ads but with model choice, lower costs, and full ownership of the stack — this is for you.
+> **Open-source AI Design Agent** -> https://github.com/Anil-matcha/Open-AI-Design-Agent
 
----
+## 🌐 Try it Online — No Install Required
 
-## Features
+**Hosted version:** [https://muapi.ai](https://muapi.ai)
 
-- **AI UGC video ads in minutes** — paste a script, upload a reference image, generate a 9:16 vertical ad
-- **Multi-model support** — switch between Veo 3.1, Seedance 2, Grok Video, and Happy Horse 1 from a single UI
-- **Image-to-video & text-to-video** — upload up to 7 reference images (faces, products, scenes) and reference them inline with `@image1`, `@image2`, etc.
-- **Per-model parameter control** — aspect ratio, duration, resolution, mode (fun / normal / spicy for Grok)
-- **Credits & billing built in** — Stripe checkout, webhooks, and a 3-tier pricing page out of the box
-- **Google sign-in** — NextAuth with Prisma adapter, ready to go
-- **Async job pipeline** — MUAPI webhook delivers finished renders; the dashboard polls and updates live
-- **Creations dashboard** — history of every generation per user
+Generate UGC video ads directly in your browser — no Node.js, no setup, no Stripe keys. Sign up for a free account to start generating with the same models this repo ships with. The hosted version is always up to date with the latest UGC actor models.
+
+**Follow** the [creator](https://x.com/matchaman11) for updates
 
 ---
 
-## Tech Stack
+Open AI UGC is a free, open-source AI UGC video ad studio that brings the Arcads / MakeUGC workflow to everyone — without the $110–$500+/month per-seat subscription. Paste a script, upload a reference face or product image, pick a model, and ship a scroll-stopping 9:16 vertical ad for TikTok, Reels, or Shorts in under a minute. Powered by [Muapi.ai](https://muapi.ai), it supports image-to-video and text-to-video generation across models like **Veo 3.1**, **Seedance 2**, **Grok Video**, and **Happy Horse 1** — all from a sleek, modern interface you can self-host, rebrand, and customize end to end.
 
-- **Framework:** Next.js 16 (App Router) + React 19
-- **Styling:** Tailwind CSS v4 + Framer Motion
-- **Auth:** NextAuth.js (Google provider) + Prisma adapter
-- **Database:** PostgreSQL via Prisma 7
-- **Payments:** Stripe Checkout + webhooks
-- **AI video:** [MUAPI](https://muapi.ai) (Veo 3.1, Seedance 2, Grok Video, Happy Horse 1)
+**Why Open AI UGC instead of Arcads or MakeUGC?**
+- **Free & open-source** — no $110–$500/mo subscription, no vendor lock-in
+- **Bring your own actors** — upload any face or product image instead of being locked to a vendor roster
+- **Model choice** — switch between Veo 3.1, Seedance 2, Grok Video, and Happy Horse 1 per render
+- **No watermark, no branding** — 100% your domain, your studio, your client deliverables
+- **Self-hosted** — your data and renders stay on your infra, full creative control
+- **Stripe & credits built-in** — clone, swap branding, and sell it as your own UGC SaaS
+- **Extensible** — add any MUAPI model in ~10 lines, modify the UI, build agencies on top of it
 
 ---
 
-## Quick Start
+## ✨ Features
 
-### 1. Clone & install
+- **AI UGC Video Studio** — Paste a script, optionally upload up to 7 reference images (faces, products, scenes), pick a model, and generate a 9:16 vertical UGC ad. Reference images inline with `@image1`, `@image2`, etc.
+- **Multi-model support** — 4 leading video models pre-wired: Veo 3.1 (Google), Seedance 2 (ByteDance), Grok Video (xAI), and Happy Horse 1. Switch per render.
+- **Image-to-Video & Text-to-Video** — Animate a product shot, an AI-generated actor, or generate purely from text — your call.
+- **Per-model parameter control** — Aspect ratio (9:16, 16:9, 1:1, etc.), duration (3–30s), resolution (480p → 4K), and mode (fun / normal / spicy for Grok) — UI adapts automatically to each model's capabilities.
+- **Async job pipeline** — MUAPI delivers finished renders via webhook; the dashboard polls and updates live without page reloads.
+- **Creations dashboard** — Every generation is persisted per user with prompt, settings, status, and final video URL.
+- **Credits system** — Each user starts with 10 free credits; 1 credit per generation; insufficient-credit gating built in.
+- **Stripe billing** — 3-tier pricing page (Free / Pro $19.99 / Elite $49.99) with Checkout + webhook credit top-up. Swap the tiers to whatever you want and ship.
+- **Google sign-in** — NextAuth.js with Prisma adapter, ready to go. Add more providers in one file.
+- **Responsive UI** — Tailwind v4 + Framer Motion, works on desktop and mobile, glassmorphism design.
+
+### 🎬 UGC Video Generation — Dual Mode
+
+The studio automatically adapts based on whether you upload reference images:
+
+| Mode | Trigger | Use case | Prompt |
+| :--- | :--- | :--- | :--- |
+| **Text-to-Video** | No image uploaded | Generate a UGC ad purely from a script | Required |
+| **Image-to-Video** | Reference image(s) uploaded | Animate a specific actor face / product shot / scene | Optional |
+
+#### Supported Models
+
+| Model | Provider | Type | Aspect Ratios | Duration | Resolution | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Veo 3.1** | Google | I2V | 16:9, 9:16 | 8s | 720p / 1080p / 4K | High-fidelity, realistic motion — best for premium client ads |
+| **Seedance 2** | ByteDance | I2V | 21:9, 16:9, 4:3, 1:1, 3:4, 9:16 | 4–15s | — | Character-reference support, multi-shot generation |
+| **Grok Video** | xAI | I2V | 9:16, 16:9, 2:3, 3:2, 1:1 | 6–30s | 480p / 720p | Modes: fun / normal / spicy — strong for high-CTR hooks |
+| **Happy Horse 1** | — | I2V | 16:9, 9:16, 1:1, 4:3, 3:4 | 3–15s | 720p | Fast, lifelike animation — great for batch iteration |
+
+Adding a new MUAPI model takes ~10 lines in `src/app/page.js` (append to the `MODELS` array) and one line in `src/app/api/generate/route.js` (add to `MODEL_ENDPOINTS`).
+
+### 🖼️ Multi-Image Reference Input
+
+UGC ads frequently need multiple references — actor face + product + setting. Open AI UGC supports up to **7 reference images per generation**:
+
+- **Drag-and-drop or click** to upload — images upload asynchronously with live status pills
+- **Inline references** in your script — `@image1 holding the bottle, walking through @image2`
+- **Per-image previews** with one-click removal
+- **Auto-routing** — passed as both `image_url` (first image) and `images_list` (full array) so every MUAPI model receives them in the format it expects
+
+### 💳 Credits & Stripe Billing
+
+Out-of-the-box billing flow you can sell as a SaaS:
+
+| Plan | Price | Credits | Target |
+| :--- | :--- | :--- | :--- |
+| **Starter** | Free | 10 | Trial users |
+| **Pro Studio** | $19.99/mo | 500 | Solo creators / freelancers |
+| **Elite Creator** | $49.99/mo | 1,500 | Agencies / power users |
+
+Plans, prices, and features are defined in one file (`src/app/pricing/page.js`) — change them to whatever your business model needs. Stripe Checkout handles the payment, the webhook (`src/app/api/webhook/stripe/route.js`) increments credits on success.
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18+)
+- A PostgreSQL database (free tiers on [Neon](https://neon.tech), [Supabase](https://supabase.com), or [Railway](https://railway.app))
+- A [Muapi.ai access key](https://muapi.ai/access-keys) — copy the generated key value, not the label
+- A [Google OAuth client](https://console.cloud.google.com/apis/credentials) (Client ID + Secret)
+- A [Stripe account](https://stripe.com) (test mode is fine to start)
+
+### Setup
 
 ```bash
-git clone https://github.com/<your-username>/open-ai-ugc.git
-cd open-ai-ugc
+# Clone the repo
+git clone https://github.com/Anil-matcha/Open-AI-UGC.git
+cd Open-AI-UGC
+
+# Install dependencies
 npm install
+
+# Copy env template and fill in the values
+cp .env.example .env
+
+# Push the Prisma schema to your database
+npx prisma db push
+
+# Start the dev server
+npm run dev
 ```
 
-### 2. Configure environment
+Open [http://localhost:3000](http://localhost:3000), sign in with Google, and start generating. Every new user starts with 10 free credits.
 
-Copy `.env.example` to `.env` and fill in:
+### Environment Variables
 
 ```env
-# Database (Postgres — Supabase, Neon, Railway, etc.)
+# Postgres (Neon / Supabase / Railway / self-hosted)
 DATABASE_URL="postgresql://user:password@host:port/dbname"
 DIRECT_URL="postgresql://user:password@host:port/dbname"
 
-# NextAuth
+# NextAuth — generate with: openssl rand -base64 32
 NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET="run: openssl rand -base64 32"
+NEXTAUTH_SECRET="..."
 
-# Google OAuth (https://console.cloud.google.com/apis/credentials)
+# Google OAuth
 GOOGLE_CLIENT_ID="..."
 GOOGLE_CLIENT_SECRET="..."
 
-# MUAPI — get a key at https://muapi.ai
-UGC_API_KEY="your_muapi_key"
-WEBHOOK_URL="https://your-deployment-url.com"
+# MUAPI — https://muapi.ai/access-keys
+UGC_API_KEY="..."
+WEBHOOK_URL="https://your-deployment-url.com"  # MUAPI calls this when a render finishes
 
 # Stripe
 STRIPE_SECRET_KEY="sk_test_..."
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_test_..."
 STRIPE_WEBHOOK_SECRET="whsec_..."
+
+# UI
+NEXT_PUBLIC_THEME=light
 ```
 
-### 3. Push the schema & run
+### Production Build
 
 ```bash
-npx prisma db push
-npm run dev
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) and sign in with Google. Every new user starts with 10 credits.
-
----
-
-## How It Works
-
-1. **User writes a script** and uploads up to 7 reference images (e.g., an actor photo + a product shot).
-2. **Frontend** (`src/app/page.js`) sends the prompt, settings, and image URLs to `/api/generate`.
-3. **`/api/generate`** validates credits, calls the selected MUAPI model endpoint, stores a `Creation` row with `status: "processing"`, and decrements 1 credit.
-4. **MUAPI** runs the render asynchronously and calls `/api/webhook/muapi` when done.
-5. **Webhook handler** updates the `Creation` row with the finished video URL and status.
-6. **Frontend polls** `/api/creations/[id]` every 3s until status changes, then plays the video inline.
-
----
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── page.js                 # Main generator UI
-│   ├── dashboard/page.js       # User's creation history
-│   ├── pricing/page.js         # Stripe-powered pricing
-│   └── api/
-│       ├── generate/           # Kick off a generation
-│       ├── upload/             # Image uploads
-│       ├── creations/          # List & fetch creations
-│       ├── webhook/muapi/      # Async render callback
-│       ├── webhook/stripe/     # Credit top-up on payment
-│       └── checkout/stripe/    # Stripe Checkout session
-├── components/
-│   ├── saas/Navbar.jsx
-│   └── ...
-└── lib/
-    ├── auth.js                 # NextAuth config
-    └── prisma.js
-prisma/
-└── schema.prisma               # User, Creation, Account, Session
-```
-
----
-
-## Supported Models
-
-| Model | Use case | Aspect ratios | Max duration |
-|---|---|---|---|
-| **Veo 3.1** | High-fidelity, realistic motion (best for premium ads) | 16:9, 9:16 | 8s |
-| **Seedance 2** | Character-reference video, multi-shot | 21:9, 16:9, 4:3, 1:1, 3:4, 9:16 | 15s |
-| **Grok Video** | Fast, expressive, "spicy" mode for hooks | 9:16, 16:9, 2:3, 3:2, 1:1 | 30s |
-| **Happy Horse 1** | Lifelike animation, fast iteration | 16:9, 9:16, 1:1, 4:3, 3:4 | 15s |
-
-Adding a new MUAPI model takes ~10 lines in `src/app/page.js` (add to the `MODELS` array) and one line in `src/app/api/generate/route.js` (add to `MODEL_ENDPOINTS`).
-
----
-
-## Deploy
-
-The easiest path is **Vercel + Neon/Supabase + Stripe**:
+### Deploy in 5 minutes (Vercel + Neon + Stripe)
 
 1. Push the repo to GitHub.
-2. Import into Vercel and add all env vars from `.env.example`.
-3. Set `WEBHOOK_URL` to your Vercel deployment URL.
-4. In the Stripe dashboard, point a webhook at `https://<your-domain>/api/webhook/stripe` and copy the signing secret into `STRIPE_WEBHOOK_SECRET`.
-5. In MUAPI, set the webhook URL to `https://<your-domain>/api/webhook/muapi`.
+2. Import into [Vercel](https://vercel.com/new) and paste all env vars from `.env.example`.
+3. Set `WEBHOOK_URL` to your Vercel deployment URL (e.g. `https://your-app.vercel.app`).
+4. In the Stripe dashboard, add a webhook pointing to `https://<your-domain>/api/webhook/stripe` and copy the signing secret into `STRIPE_WEBHOOK_SECRET`.
+5. In MUAPI, set the webhook URL to `https://<your-domain>/api/webhook/muapi` (or rely on `WEBHOOK_URL` env — `/api/generate/route.js` builds the full path automatically).
 
----
+You now have a hosted, brandable AI UGC SaaS.
 
-## Roadmap Ideas
-
-- AI script generator (GPT/Claude-powered hook writer)
-- Voiceover + lip-sync stage (ElevenLabs / Sync.so)
-- Multi-variant batch generation (A/B test 20 hooks at once)
-- Built-in actor library (preset reference faces)
-- TikTok / Meta Ads direct publish
-- Team workspaces & seat management
-
-PRs welcome.
-
----
-
-## Suggested GitHub Topics
-
-When publishing the repo, add these topics so it surfaces for the right audience:
+## 🏗️ Architecture
 
 ```
-ai-ugc  ugc-ads  ai-actors  ai-video-ads  arcads-alternative  makeugc-alternative
-ai-video-generator  text-to-video  image-to-video  veo-3  seedance  grok-video
-muapi  nextjs  saas-template  stripe  ai-marketing  user-generated-content
+Open-AI-UGC/
+├── src/
+│   ├── app/
+│   │   ├── layout.js                       # Root layout (Tailwind, NextAuth provider, Navbar)
+│   │   ├── page.js                         # Main UGC generator — model picker, prompt, image upload
+│   │   ├── dashboard/page.js               # User's generation history
+│   │   ├── pricing/page.js                 # Stripe-powered pricing page
+│   │   └── api/
+│   │       ├── generate/route.js           # POST — kick off a UGC video generation
+│   │       ├── upload/route.js             # POST — image upload → hosted URL
+│   │       ├── creations/route.js          # GET — list user's creations
+│   │       ├── creations/[id]/route.js     # GET — single creation (polled by frontend)
+│   │       ├── webhook/muapi/route.js      # POST — MUAPI render-complete callback
+│   │       ├── webhook/stripe/route.js     # POST — Stripe payment callback → top up credits
+│   │       ├── checkout/stripe/route.js    # POST — create Stripe Checkout session
+│   │       └── auth/[...nextauth]/route.js # NextAuth handler
+│   ├── components/
+│   │   ├── saas/Navbar.jsx                 # Top nav with credits badge & profile menu
+│   │   ├── saas/AuthButtons.jsx
+│   │   └── ui/                             # Button, Card primitives
+│   └── lib/
+│       ├── auth.js                         # NextAuth config (Google + Prisma adapter)
+│       └── prisma.js                       # Prisma client singleton
+├── prisma/
+│   └── schema.prisma                       # User, Creation, Account, Session, VerificationToken
+└── package.json
 ```
 
----
+## 🔌 API Integration
 
-## License
+Open AI UGC communicates with [Muapi.ai](https://muapi.ai) using a webhook pattern:
+
+1. **Submit** — `POST /api/v1/{model-endpoint}` with `prompt`, `images_list`, model parameters, and `webhook_url`
+2. **Wait** — MUAPI runs the render asynchronously (8s–2min depending on model and duration)
+3. **Callback** — MUAPI calls your `webhook_url` with the finished video URL and request ID
+4. **Update** — `/api/webhook/muapi/route.js` finds the matching `Creation` row by `request_id` and updates its status + URL
+5. **Poll** — the frontend polls `/api/creations/[id]` every 3 seconds and switches from spinner to video player as soon as status flips
+
+Authentication uses the `x-api-key` header. Credits are decremented on submit (so failed renders cost a credit — you can adjust this in `src/app/api/generate/route.js` if you'd rather refund on failure).
+
+## 🛠️ Tech Stack
+
+- **Next.js 16** — App Router, server components, React 19
+- **React 19** — Studio UI
+- **Tailwind CSS v4** — Utility-first styling
+- **Framer Motion** — Animations and transitions
+- **Prisma 7** — Type-safe Postgres ORM
+- **NextAuth.js** — Google OAuth with Prisma adapter
+- **Stripe** — Checkout + webhooks for credit top-up
+- **Muapi.ai** — AI video model API gateway (Veo, Seedance, Grok, Happy Horse, and more)
+
+## 🤔 How is this different from Arcads and MakeUGC?
+
+**Open AI UGC** is a community-driven, open-source alternative that gives you the same Arcads/MakeUGC workflow without the closed ecosystem and per-seat pricing.
+
+| | Arcads / MakeUGC | **Open AI UGC** |
+| :--- | :--- | :--- |
+| **Cost** | $110–$500+/mo per seat | Free (open-source) — pay only for MUAPI API usage |
+| **Actor library** | Locked to vendor's roster | Bring your own — any face or product image |
+| **Model choice** | Single in-house model | Veo 3.1, Seedance 2, Grok Video, Happy Horse 1 (swap per render) |
+| **Hosted version** | SaaS only | Self-host on Vercel / your own infra |
+| **White-label** | Vendor branding / templates | 100% your brand, your domain, your client deliverables |
+| **Custom pricing** | Fixed tiers | Stripe + 3 tiers wired up, edit one file to change |
+| **Source code** | Closed | MIT licensed, fully hackable |
+| **Data privacy** | Cloud-only | Your renders and user data stay on your infra |
+| **Reseller-friendly** | No | Yes — built to be cloned, rebranded, and sold |
+
+## 📄 License
 
 MIT — fork it, rebrand it, ship it.
+
+## 🙏 Credits
+
+Built with [Muapi.ai](https://muapi.ai) — the unified API for AI image and video generation models.
+
+---
+
+*Looking for a free, open-source alternative to Arcads or MakeUGC? Open AI UGC is a self-hostable AI UGC video ad studio you can customize, rebrand, and resell. No content filters, no vendor lock-in, no per-seat pricing.*
